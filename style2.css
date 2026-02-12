@@ -1,0 +1,142 @@
+:root {
+    --purple-grad: linear-gradient(to right, #8838FF, #E942FF);
+    --bg-main: #F5F3F7;
+    --text-heading: #3E2753;
+    --text-para: #A39DA9;
+    --msg-left: #EDE5F4;
+    --msg-right: #FFFFFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #FAFAFA;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Purple Shape */
+.bg-shape-left {
+    position: absolute;
+    width: 350px;
+    height: 80vh;
+    background: var(--purple-grad);
+    left: -80px;
+    top: 0;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    z-index: -1;
+}
+
+.main-wrapper {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 120px;
+    padding: 40px;
+}
+
+/* Phone Styling */
+.phone {
+    width: 250px;
+    height: 530px;
+    background: var(--bg-main);
+    border: 10px solid white;
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.notch {
+    width: 130px;
+    height: 18px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 10;
+}
+
+.chat-header {
+    background: var(--purple-grad);
+    padding: 35px 15px 12px;
+    border-radius: 0 0 10px 10px;
+    color: white;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-avatar { width: 24px; border-radius: 50%; border: 1px solid white; }
+.user-meta h2 { font-size: 11px; }
+.user-meta p { font-size: 8px; opacity: 0.6; }
+
+/* Messages */
+.chat-area { padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+
+.msg { font-size: 8px; padding: 6px 10px; max-width: 75%; border-radius: 10px; }
+.incoming { background: var(--msg-left); color: #9241C8; align-self: flex-start; border-bottom-left-radius: 4px; }
+.outgoing { background: var(--msg-right); color: #6E5D7E; align-self: flex-end; border-bottom-right-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+.dog-images { display: flex; gap: 8px; align-self: flex-end; margin-top: 5px; }
+.dog-images img { width: 5px; border-radius: 8px; }
+
+/* Booking Options */
+.option {
+    background: var(--purple-grad);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px 10px 10px 4px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    font-size: 8px;
+}
+
+.radio { width: 10px; height: 10px; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; margin-right: 8px; }
+.price { margin-left: auto; font-weight: bold; font-size: 12px; }
+
+/* Input */
+.input-pill {
+    background: white;
+    margin: 10px;
+    padding: 5px 5px 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    color: #C6BECE;
+}
+
+.submit-btn {
+    background: #3E2753;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+/* Right Text */
+.text-container h1 { font-size: 40px; color: var(--text-heading); margin-bottom: 20px; }
+.text-container p { color: var(--text-para); line-height: 1.8; font-size: 16px; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .main-wrapper { flex-direction: column; text-align: center; gap: 60px; }
+    .bg-shape-left { width: 250px; left: -100px; }
+}
